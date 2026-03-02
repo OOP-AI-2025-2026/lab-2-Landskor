@@ -1,46 +1,52 @@
 package ua.opnu;
 
-
 public class TimeSpan {
+    public int hours;
+    public int minutes;
 
-    // TODO: add class fields
-
-    TimeSpan(int hours, int minutes) {
-        // TODO: write constructor body
+    public TimeSpan() {
+        this.hours = 0;
+        this.minutes = 0;
     }
 
-    int getHours() {
-        return 0;
+    public TimeSpan(int hours, int minutes) {
+        this.hours = hours;
+        this.minutes = minutes;
     }
 
-    int getMinutes() {
-        // TODO: write method body
-        return 0;
+    public int getHours() {
+        return hours;
     }
 
-    void add(int hours, int minutes) {
-        // TODO: write method body
+    public int getMinutes() {
+        return minutes;
     }
 
-    void addTimeSpan(TimeSpan timespan) {
-        // TODO: write method body
+    public void add(int hours, int minutes) {
+        this.hours = this.hours + hours;
+        this.minutes = this.minutes + minutes;
     }
 
-    double getTotalHours() {
-        // TODO: write method body
-        return 0;
+    public void addTimeSpan(TimeSpan timespan) {
+        this.hours = this.hours + timespan.hours;
+        this.minutes = this.minutes + timespan.minutes;
     }
 
-    int getTotalMinutes() {
-        // TODO: write method body
-        return 0;
+    public double getTotalHours() {
+        return this.hours + this.minutes / 60.0;
     }
 
-    void subtract(TimeSpan span) {
-        // TODO: write method body
+    public int getTotalMinutes() {
+        return this.hours * 60 + this.minutes;
     }
 
-    void scale(int factor) {
-        // TODO: write method body
+    public void subtract(TimeSpan span) {
+        this.hours = this.hours - span.hours;
+        this.minutes = this.minutes - span.minutes;
+    }
+
+    public void scale(int factor) {
+        this.hours = this.hours * factor;
+        this.minutes = this.minutes * factor;
     }
 }
